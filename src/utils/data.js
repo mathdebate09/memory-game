@@ -13,7 +13,7 @@ import WardenImg from '../assets/images/characters/warden.png';
 import WitherImg from '../assets/images/characters/wither.png';
 import WolfImg from '../assets/images/characters/wolf.png';
 
-export const data = [ 
+const data = [ 
     {
         name: 'Axoltol',
         img: AxoltolImg,
@@ -75,3 +75,5 @@ export const data = [
         id: uuid()
     },
 ]
+
+export default data
