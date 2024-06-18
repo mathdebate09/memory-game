@@ -1,0 +1,71 @@
+/* FONT IMPORTS */
+
+@font-face {
+  font-family: Minecrafter;
+  src: url('../assets/fonts/Minecrafter.Reg.ttf');
+}
+
+@font-face {
+  font-family: MinecraftSystem;
+  src: url('../assets/fonts/MinecraftRegular.ttf');
+}
+
+@font-face {
+  font-family: KarmaticArcade;
+  src: url('../assets/fonts/ka1.ttf');
+}
+
+/* GLOBAL STYLES */
+
+:root {
+  --bg-primary: #698C40;
+
+  --header-font: 'Minecrafter', system-ui;
+  --score-font: 'KarmaticArcade', system-ui;
+  --card-font: 'MinecraftSystem', system-ui;
+
+  --fs-200: 1.1rem;
+  --fs-400: 1.4rem;
+  --fs-600: 4.8rem;
+}
+
+img {
+  height: 100px;
+}
+
+/* HEADER */
+
+header {
+  background-image: url('../assets/images/textures/lime-terracotta.png');
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  gap: 3rem;
+}
+
+header>p {
+  font-family: 'Minecrafter', sans-serif;
+  font-size: var(--fs-600);
+}
+
+/* SCORECARD */
+.score-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/images/textures/quartz.jpg');
+  height:3.5rem;
+}
+
+.score-div>p {
+  font-size:var(--fs-400);
+  font-family: var(--score-font);
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 10px;
+}
