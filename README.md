@@ -5,7 +5,7 @@ Minecraft Memory is a Minecraft-themed memory game built with React. This projec
 
 ## Preview
 
-![minecraft-memory](https://github.com/mathdebate09/memory-game/assets/140599484/a89ac752-4c3b-411e-bf1c-03c8e4ec4e9b)
+![mm-2](https://github.com/mathdebate09/memory-game/assets/140599484/e5f13814-3260-40db-8650-c8f2e874dba8)
 
 ## Features
 
