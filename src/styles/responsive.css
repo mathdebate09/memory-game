@@ -18,6 +18,10 @@
         margin-top: -16px;
     }
 
+    .instructions>ul {
+        margin-top:0rem;
+      }
+
     /* CARDS CONTAINER */
 
     .cards-table {

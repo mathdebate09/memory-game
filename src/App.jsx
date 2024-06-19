@@ -60,6 +60,12 @@ function App() {
   return (
     <div className="container">
       <header onClick={secretClick}><p>MINECR<span className="header-a">a</span>FT</p><p>MEMORY</p></header>
+      <section className="instructions">
+        <ul>
+          <li>Memorize every card you click, clicking a card again will reset the score.</li>
+          <li>Maximum score achievable is 12 but the soothing music is infinite and uhm, <span>AD-FREE!</span></li>
+        </ul>
+      </section>
       <section className="score-div" aria-label='score card'>
         <p>Score- {currentScore} -- Best- {bestScore}</p>
       </section>

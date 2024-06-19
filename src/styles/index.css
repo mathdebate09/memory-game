@@ -69,6 +69,28 @@ header>p {
   -moz-text-fill-color: transparent;
 }
 
+/* INSTRUCTIONS */
+
+.instructions {
+  background-image: url('../assets/images/textures/lime-terracotta.png');
+  background-repeat: repeat;
+  font-family: var(--card-font);
+  padding-bottom: 1rem;
+}
+
+.instructions>ul {
+  margin-top:-1rem;
+}
+
+.instructions>ul>li>span {
+  animation: color-switch 1s steps(1) infinite;
+}
+
+@keyframes color-switch {
+  0%, 49.99% { color: black; }
+  50%, 100% { color: white; }
+}
+
 /* SCORECARD */
 
 .score-div {
