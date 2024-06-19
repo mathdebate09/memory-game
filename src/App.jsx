@@ -43,14 +43,16 @@ function App() {
 
   return (
     <div className="container">
-      <header><p>MINECRaFT</p><p>MEMORY</p></header>
+      <header><p>MINECR<span className="header-a">a</span>FT</p><p>MEMORY</p></header>
       <section className="score-div">
         <p>Score- {currentScore} -- Best- {bestScore}</p>
       </section>
-      <section className="cards-tray">
-        {cardArray}
+      <section className="cards-container">
+        <div className="cards-table">
+          {cardArray}
+        </div>
       </section>
-      <Footer numOfHours={4} />
+      <Footer numOfHours={11} />
     </div>
   )
 }

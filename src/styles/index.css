@@ -20,17 +20,25 @@
 :root {
   --bg-primary: #698C40;
 
+  --black: #030605;
+
   --header-font: 'Minecrafter', system-ui;
   --score-font: 'KarmaticArcade', system-ui;
   --card-font: 'MinecraftSystem', system-ui;
 
-  --fs-200: 1.1rem;
-  --fs-400: 1.4rem;
+  --fs-200: 1.2rem;
   --fs-600: 4.8rem;
-}
 
-img {
-  height: 100px;
+  --pixel-bg: #6a040f;
+  /* Inner background color */
+  --pixel-border: var(--black);
+  /* Inner border color: */
+  --pixel-border-2: #CCC8B3;
+  /* Middle border color: */
+  --pixel-border-3: var(--black);
+  /* Outer border color */
+  --pixel: .125rem;
+  /* Pixel size */
 }
 
 /* HEADER */
@@ -48,24 +56,164 @@ header {
 header>p {
   font-family: 'Minecrafter', sans-serif;
   font-size: var(--fs-600);
+  color: var(--black);
+}
+
+.header-a {
+  background: linear-gradient(360deg, hsla(88, 38%, 15%, 1) 33%, hsla(160, 33%, 2%, 1) 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 /* SCORECARD */
+
 .score-div {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../assets/images/textures/quartz.jpg');
-  height:3.5rem;
+  background-image: url('../assets/images/textures/sandstone-bricks.png');
+  height: 3.5rem;
 }
 
 .score-div>p {
-  font-size:var(--fs-400);
+  font-size: var(--fs-200);
   font-family: var(--score-font);
+  color: var(--black);
+}
+
+/* CARDS CONTAINER */
+
+.cards-container {
+  background-image: url('../assets/images/textures/sandstone.jpg');
+  background-repeat: repeat;
+  height: fit-content;
+}
+
+.cards-table {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 4rem;
+  padding: 5rem 0;
+}
+
+/* CARDS */
+
+.card {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: #CCC8B3;
+  font-family: var(--card-font);
+  cursor: pointer;
+  padding: 0.8rem 0.8rem 0 0.8rem;
+  font-size: var(--fs-200);
+  text-align: center;
+  font-weight: 500;
+}
+
+.card>img {
+  background-color: #dda15e;
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-top: -8px;
+}
+
+.width>img {
+  height: 14rem;
+  padding: 0.5rem 2rem;
+}
+
+.height>img {
+  height: 10rem;
+  width: 19rem;
+}
+
+/* Reference: https://codepen.io/fallwestmike/pen/ezOGJK */
+.card {
+  background: var(--pixel-bg);
+  box-shadow:
+    /* Inner Background Color */
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+    /* Pixel Border Layer 1 */
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+    /* Pixel Border Layer 2 */
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+    /* Border Layer 3: --pixel-border-3 */
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
 }
 
 /* FOOTER */
 
 footer {
-  font-size: 10px;
+  font-size: var(--fs-200);
+  font-family: var(--card-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  height: 42px;
+  background-image: url('../assets/images/textures/gilded-blackstone.png');
+}
+
+footer a {
+  color: aliceblue;
+}
+
+footer a:hover {
+  font-weight: bold;
 }

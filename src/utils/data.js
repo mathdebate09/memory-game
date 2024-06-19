@@ -25,7 +25,7 @@ const data = [
         id: uuid()
     },
     {
-        name: 'Bogged',
+        name: 'Bogged Skeleton',
         img: BoggedImg,
         id: uuid()
     },
@@ -45,7 +45,7 @@ const data = [
         id: uuid()
     },
     {
-        name: 'Technopig',
+        name: 'TechnoBlade',
         img: TechnopigImg,
         id: uuid()
     },
