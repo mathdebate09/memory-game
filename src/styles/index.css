@@ -51,6 +51,7 @@ header {
   justify-content: center;
   height: 8rem;
   gap: 3rem;
+  cursor:pointer;
 }
 
 header>p {

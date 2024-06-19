@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import useSound from 'use-sound';
 
 import Card from './components/Card'
 import Footer from './components/Footer'
@@ -6,13 +7,26 @@ import Footer from './components/Footer'
 import data from './utils/data'
 import shuffle from './utils/shuffleArray.js'
 
+import MinecraftTheme from './assets/audio/C418-Minecraft-MinecraftVolumeAlpha.mp3'
+import ChestOpen from './assets/audio/chest-open.mp3'
+import DoorClose from './assets/audio/door-close.mp3'
+import VillagerHein from './assets/audio/villager-hein.mp3'
+
 function App() {
   const [currentScore, setCurrentScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
-
   const [selectedCards, setSelectedCards] = useState([])
 
+  const [validClick] = useSound(ChestOpen);
+  const [invalidClick] = useSound(DoorClose);
+  const [secretClick] = useSound(VillagerHein);
+  const [loopBackgroundMusic] = useSound(MinecraftTheme, { loop: true });
+
   const cardData = shuffle(data)
+
+  useEffect(() => {
+    loopBackgroundMusic();
+  }, [loopBackgroundMusic])
 
   function handleCardClick(id) {
     if (selectedCards.includes(id)) {
@@ -20,12 +34,14 @@ function App() {
       return;
     }
 
+    validClick();
     setCurrentScore(currentScore => currentScore + 1)
     currentScore === bestScore ? setBestScore(bestScore => bestScore + 1) : null
     setSelectedCards(currentCards => [...currentCards, id])
   }
 
   function reset() {
+    invalidClick();
     setCurrentScore(0)
     setSelectedCards([])
   }
@@ -43,7 +59,7 @@ function App() {
 
   return (
     <div className="container">
-      <header><p>MINECR<span className="header-a">a</span>FT</p><p>MEMORY</p></header>
+      <header onClick={secretClick}><p>MINECR<span className="header-a">a</span>FT</p><p>MEMORY</p></header>
       <section className="score-div">
         <p>Score- {currentScore} -- Best- {bestScore}</p>
       </section>
