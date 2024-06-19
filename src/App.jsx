@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="container">
       <header onClick={secretClick}><p>MINECR<span className="header-a">a</span>FT</p><p>MEMORY</p></header>
-      <section className="score-div">
+      <section className="score-div" aria-label='score card'>
         <p>Score- {currentScore} -- Best- {bestScore}</p>
       </section>
       <section className="cards-container">
